@@ -1,0 +1,4 @@
+interface:
+  display_name: "Download Instagram Carousel"
+  short_description: "Download carousel media in its real order"
+  default_prompt: "Use $download-instagram-carousel to download every media slide from this public Instagram carousel in order."

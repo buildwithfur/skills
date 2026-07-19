@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Video Keyframes"
+  short_description: "Review videos using transcripts and keyframes"
+  default_prompt: "Use $review-video-keyframes to review this video using its transcript and representative timestamped frames."

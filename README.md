@@ -1,15 +1,26 @@
-# Build With Fur skills
+# Reusable agent skills
 
-Remote desktop skills that give a user browser-based access when an agent needs
-private or manual GUI input and no existing handoff method can complete the task.
+Reusable agent skills for browser-based human handoffs and practical social-video
+research workflows.
 
 ## Available skills
+
+### Browser and desktop handoff
 
 - `setup-isolated-browser-desktop` creates a shared Linux browser desktop that
   the user and agent can operate in the same session.
 - `setup-macos-web-screen-sharing` exposes the user's real Mac session through a
   browser, preserving access to local profiles, extensions, password managers,
   and native apps.
+
+### Social-video research
+
+- `download-social-video` downloads public TikTok, Instagram video/Reel, and
+  YouTube videos, prioritising original-language captions before transcription.
+- `download-instagram-carousel` retrieves the original assets from a public
+  Instagram carousel in its true slide order.
+- `review-video-keyframes` combines a transcript with scene-detected keyframes
+  to review hooks, pacing, proof, composition, and payoff in short-form video.
 
 ## Install with the skills CLI
 
@@ -25,23 +36,16 @@ List the available skills without installing:
 npx skills add buildwithfur/skills --list
 ```
 
-Install one globally for Codex:
+Install a specific skill globally for Codex:
 
 ```bash
 npx skills add buildwithfur/skills \
-  --skill setup-isolated-browser-desktop \
+  --skill download-social-video \
   --agent codex \
   --global
 ```
 
-```bash
-npx skills add buildwithfur/skills \
-  --skill setup-macos-web-screen-sharing \
-  --agent codex \
-  --global
-```
-
-Install both:
+Install every skill:
 
 ```bash
 npx skills add buildwithfur/skills \
@@ -54,14 +58,10 @@ Without `--global`, the CLI installs into the current project.
 
 ## Install from inside Codex
 
-Ask Codex to install either GitHub folder:
+Ask Codex to install a skill by its GitHub folder:
 
 ```text
-$skill-installer install https://github.com/buildwithfur/skills/tree/main/setup-isolated-browser-desktop
-```
-
-```text
-$skill-installer install https://github.com/buildwithfur/skills/tree/main/setup-macos-web-screen-sharing
+$skill-installer install https://github.com/buildwithfur/skills/tree/main/<skill-name>
 ```
 
 Start a new Codex session after installation.

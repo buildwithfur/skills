@@ -1,0 +1,4 @@
+interface:
+  display_name: "Download Social Video"
+  short_description: "Download and inspect public social videos"
+  default_prompt: "Use $download-social-video to download and inspect this social video, preserving original captions when available."
