@@ -1,0 +1,4 @@
+interface:
+  display_name: "Isolated Browser Desktop"
+  short_description: "Build a browser-accessible Linux desktop"
+  default_prompt: "Use $setup-isolated-browser-desktop to set up a remote Linux browser desktop with noVNC and Tailscale."

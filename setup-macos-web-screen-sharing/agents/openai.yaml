@@ -1,0 +1,4 @@
+interface:
+  display_name: "macOS Web Screen Sharing"
+  short_description: "Access a real Mac desktop from a browser"
+  default_prompt: "Use $setup-macos-web-screen-sharing to set up browser access to my real Mac desktop with Screen Sharing, noVNC, and Tailscale."
