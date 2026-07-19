@@ -1,4 +1,4 @@
 interface:
   display_name: "Isolated Browser Desktop"
-  short_description: "Build a browser-accessible Linux desktop"
-  default_prompt: "Use $setup-isolated-browser-desktop to set up a remote Linux browser desktop with noVNC and Tailscale."
+  short_description: "Hand private user input to a shared browser"
+  default_prompt: "Use $setup-isolated-browser-desktop when my task requires private or manual input in the agent's browser session."

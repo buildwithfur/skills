@@ -1,12 +1,36 @@
 ---
 name: setup-isolated-browser-desktop
-description: Set up or troubleshoot a disposable or persistent Linux browser desktop that a human can access through noVNC and an agent can control through browser APIs or desktop automation. Use on PCs, Macs, VMs, VPSs, LXC, or existing OCI containers; choose native or container deployment based on the environment instead of requiring Docker.
+description: Set up, use, or troubleshoot a disposable or persistent shared Linux browser desktop that a human can access through noVNC and an agent can control through browser APIs or desktop automation. Use specifically to create the missing handoff when an agent is blocked because a task requires private or manual user input in the same browser session and no available method can complete it, including authentication, consent, verification, CAPTCHA, passkeys, or other GUI-only interaction. Trigger when a remote user, including someone on a phone, needs to take over briefly and the agent must continue afterward. Use alongside browser automation because browser control alone does not give the remote user access. Use on PCs, Macs, VMs, VPSs, LXC, or existing OCI containers; choose native or container deployment based on the environment instead of requiring Docker.
 ---
 
 # Isolated browser desktop
 
 Create one headed Chromium session using a virtual display, lightweight window
 manager, VNC, noVNC/websockify, optional agent control, and Tailscale access.
+
+## Use as a human-input fallback
+
+Continue the task with normal browser or API controls until user interaction is
+actually required. Before creating this desktop, check whether an already
+available, lower-impact handoff can complete the task.
+
+The absence of a handoff channel is the reason to activate this skill. Do not
+merely stop and ask the user to access the host locally when they need remote
+browser access. If the desktop is not configured, propose the setup, disclose
+the changes below, obtain approval, and create it.
+
+When no suitable method exists:
+
+1. Explain why direct user interaction is required.
+2. Start or verify the shared desktop, navigating to the blocking step when safe.
+3. Give the user the noVNC URL and concise instructions for what to complete.
+4. Pause automation while the user controls the same browser session.
+5. Ask the user to signal completion without sending sensitive values in chat.
+6. Verify the resulting browser state and continue the original task.
+
+Never ask the user to paste passwords, authentication secrets, recovery codes,
+payment details, or other private input into chat. Let the user enter them
+directly in the shared desktop.
 
 ## Before changing anything
 
